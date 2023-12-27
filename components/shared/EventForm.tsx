@@ -50,6 +50,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
 
     async function onSubmit(values: z.infer<typeof eventFormSchema>) {
         let uploadedImageUrl = values.imageUrl;
+        console.log(values)
 
         if (files.length > 0) {
             const uploadedImages = await startUpload(files)
@@ -208,7 +209,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                                             onChange={(date: Date) => field.onChange(date)}
                                             showTimeSelect
                                             timeInputLabel="Time:"
-                                            dateFormat="MM/dd/yyyy h:mm aa"
+                                            dateFormat="dd/MM/yyyy h:mm aa"
                                             wrapperClassName="datePicker"
                                         />
                                     </div>
@@ -239,7 +240,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                                             onChange={(date: Date) => field.onChange(date)}
                                             showTimeSelect
                                             timeInputLabel="Time:"
-                                            dateFormat="MM/dd/yyyy h:mm aa"
+                                            dateFormat="dd/MM/yyyy h:mm aa"
                                             wrapperClassName="datePicker"
                                         />
                                     </div>
